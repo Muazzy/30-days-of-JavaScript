@@ -1,0 +1,4 @@
+Variable declaration (from best to worst). (totally depends what you are declaring).
+1. const (mostly and preferably used for declaring objects (cuz then its type cannot be changed) )
+2. let (mostly used for strings, nums, etc.) (it is prefered to use cuz it cannot be re-declared, and it cannot set to be undefined, it will force you to define it.)
+3. var (also used for strings, nums and other data types, however it can be redeclared and also can be left undefined).
