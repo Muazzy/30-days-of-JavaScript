@@ -268,3 +268,24 @@ function findTheHoe(uniqueWords, wordsArr) {
 
 let mostWantedHoe = findTheHoe(uniqueWords, wordsArr);
 console.log(mostWantedHoe);
+
+
+// Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+
+let expression = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.';
+
+console.log(expression);
+
+// let diffIncomes = expression.match(/^\d+$/g); //not working, dont know why haha.
+let diffIncomes = expression.match(/\d+/g); //this will match all the numbers in the string and return us a array of that numbers.
+console.log(diffIncomes);
+
+let regularSalary = parseInt(diffIncomes[0]);
+let anualBonus = parseInt(diffIncomes[1]);
+let onlineCourseSalary = parseInt(diffIncomes[2]);
+
+let totalAnualIncome = (regularSalary * 12) + anualBonus + (onlineCourseSalary * 12);
+console.log(totalAnualIncome);
+
+
+//finally done with data types (DAY 02).

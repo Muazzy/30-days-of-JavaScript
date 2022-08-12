@@ -350,3 +350,29 @@ let num = 9.81
 let numInt = parseInt(num)
 
 console.log(numInt) // 9 
+
+
+
+//RegExp or regexp means regular expressions
+
+
+a regular expression is written in the form of /pattern/modifiers where “pattern” is the regular expression itself, and “modifiers” are a series of characters indicating various options. The “modifiers” part is optional.
+
+/g enables “global” matching. When using the replace() method, specify this modifier to replace all matches, rather than only the first one.
+/i makes the regex match case insensitive.
+/m enables “multi-line mode”. In this mode, the caret and dollar match before and after line breaks in the subject string.
+
+use cases : can help find a particular pattern inside an String.
+
+
+
+Regexp Methods of The String Class
+To test if a particular regex matches (part of) a string, you can call the strings’s match() method: if (myString.match(/regex/)) { /*Success!*/ }. If you want to verify user input, you should use anchors to make sure that you are testing against the entire string. To test if the user entered a number, use: myString.match(/^\d+$/). /\d+/ matches any string containing one or more digits, but /^\d+$/ matches only strings consisting entirely of digits.
+
+To do a search and replace with regexes, use the string’s replace() method: myString.replace(/replaceme/g, "replacement"). Using the /g modifier makes sure that all occurrences of “replaceme” are replaced. The second parameter is an normal string with the replacement text.
+
+Using a string’s split() method allows you to split the string into an array of strings using a regular expression to determine the positions at which the string is splitted. E.g. myArray = myString.split(/,/) splits a comma-delimited list into an array. The comma’s themselves are not included in the resulting array of strings.
+
+
+read more here :https://www.regular-expressions.info/javascript.html;
+
