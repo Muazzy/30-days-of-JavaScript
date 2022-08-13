@@ -1,0 +1,68 @@
+Boolean Values
+
+let isLightOn = true
+let isRaining = false
+let isHungry = false
+let isMarried = true
+let truValue = 4 > 3    // true
+let falseValue = 4 < 3  // false
+
+//We agreed that boolean values are either true or false.
+
+Truthy values
+
+    All numbers(positive and negative) are truthy except zero
+    All strings are truthy except an empty string ('')
+    The boolean true
+
+Falsy values
+
+    0
+    0n
+    null
+    undefined
+    NaN
+    the boolean false
+    '', "", ``, empty string
+
+    undefined vs null
+    undefined var or undefined in general means that the var is not assigned a value yet. if a function is not returning the value, it will be undefined.
+    while, null simply means no value. 
+
+Operators
+
+1. (=) Assignment Operators: it is used to assign values to variables.
+
+different combos:
+=
++=
+-=
+*=
+/=
+%=
+**=
+
+//** is exponention Operator and it is same as Math.pow()
+
+2. Arithmetic Operators
+Arithmetic operators are mathematical operators.
+
+Addition(+): a + b
+Subtraction(-): a - b
+Multiplication(*): a * b
+Division(/): a / b (gives remainder)
+Modulus(%): a % b
+Exponential(**): a ** b
+
+3. Comparison Operators
+//note : these Comparison operators will always yeild or return a boolean value, ie true or false.
+
+== (Equal in value only: Equivalent),  x==y
+=== (Equal in both value and data type: Exactly equal),  x===y
+!= (Not equal), x!=y
+> (greater than), x>y
+< (less than), x<y
+>= (greater than or equal to), x>=y
+<= (less than or equal to), x<=y
+
+//resume from Logical operators.
