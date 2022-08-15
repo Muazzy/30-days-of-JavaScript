@@ -65,4 +65,7 @@ Exponential(**): a ** b
 >= (greater than or equal to), x>=y
 <= (less than or equal to), x<=y
 
-//resume from Logical operators.
+//Logical operators.
+Three commonly used Logical Operators
+1. && (all the conditions must be satisfied then it will be true otherwise false) 
+2. || (atleast one condition is satisfied then it will be true otherwise false)
