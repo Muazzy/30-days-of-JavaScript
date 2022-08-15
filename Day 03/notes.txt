@@ -67,5 +67,68 @@ Exponential(**): a ** b
 
 //Logical operators.
 Three commonly used Logical Operators
-1. && (all the conditions must be satisfied then it will be true otherwise false) 
-2. || (atleast one condition is satisfied then it will be true otherwise false)
+1. && (AND operator) (all the conditions must be satisfied then it will be true otherwise false) 
+2. || (OR Operator) (atleast one condition is satisfied then it will be true otherwise false)
+3. ! (Negation Operator) : this will negate true to false & false to true. (kinda like opposite operator)
+
+//Increment Operators
+1. Increment Operators (to increase a value stored in a var)
+    a. Pre-Increment (not used that much) (increments the value first)
+        let count = 0
+        console.log(++count)        // 1 
+        console.log(count)          // 1
+
+    b. Post-Increment
+        let count = 0
+        console.log(count++)        // 0
+        console.log(count)          // 1
+
+//Decrement Operators
+2. Decrement Operators (to decrease a value stored in a var)
+    a. Pre-Decrement (not used that much) (increments the value first)
+        let count = 0
+        console.log(++count)        // -1 
+        console.log(count)          // -1
+
+    b. Post-Decrement
+        let count = 0
+        console.log(count++)        // 0
+        console.log(count)          // -1
+
+3. Ternary  Operators
+   Ternary operator allows to write a condition. Kinda like if-else
+Example: 
+        let isRaining = true
+        isRaining
+        ? console.log('You need a rain coat.') //if its true
+        : console.log('No need for a rain coat.') //else (if its fault)
+
+        isRaining = false
+        isRaining
+        ? console.log('You need a rain coat.')
+        : console.log('No need for a rain coat.')
+
+
+        let number = 5
+        number > 0
+        ? console.log(`${number} is a positive number`)
+        : console.log(`${number} is a negative number`)
+        number = -5
+
+        number > 0
+        ? console.log(`${number} is a positive number`)
+        : console.log(`${number} is a negative number`)
+
+
+alert(): for displaying an alet :> alert("elloo");
+prompt(): for taking input from the user (you can store the input in a var).
+eg: var usrAge = prompt("whats yo age");
+
+confirm(): 
+The confirm() method displays a dialog box with a specified message, along with an OK and a Cancel button. A confirm box is often used to ask permission from a user to execute something. Window confirm() takes a string as an argument. Clicking the OK yields true value, whereas clicking the Cancel button yields false value.
+
+const agree = confirm('Are you sure you like to delete? ')
+console.log(agree) // result will be true or false based on what you click on the dialog box
+
+
+//continue from date object.
