@@ -1,0 +1,6 @@
+//Arrays:
+
+two ways of creating an Array
+
+let arr1 = Array() //empty array
+let arr2 = [] //also an empty array
