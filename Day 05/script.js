@@ -181,7 +181,7 @@ console.log(naturalNums.reverse()); // [ 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ]
 const randomNouns = ['muazzam', 'black swan', 'muazzam afaque', 'muazzam soomro', 'ali', 'faizan', 'bar', 'book'];
 console.log(randomNouns.reverse()); // [ "book", "bar", "faizan", "ali", "muazzam soomro", "muazzam afaque", "black swan", "muazzam" ]
 
-const randomNums = [5, 3, 67, 89, 69, 54, 76, 6, 69, 100, 114, 2000, 2456, 754];
+let randomNums = [5, 3, 67, 89, 69, 54, 76, 6, 69, 100, 114, 2000, 2456, 754];
 
 //sorting elements in a array
 // sort: arrange array elements in ascending order. Sort takes a call back function, we will see how we use sort with a call back function in the coming sections.
@@ -208,4 +208,29 @@ console.log(randomNums.sort()); //you cannot sort number apperently. cuz the sor
 
 
 
-//there are two ways to sort a number arrays
+//there are two ways to sort a number-array
+
+// 1. either you explicitely initialize you number array as Float64Array and then apply sort 
+// like this:
+let expArray = new Float64Array([5, 3, 67, 89, 69, 54, 76, 6, 69, 100, 114, 2000, 2456, 754]); //[ 3, 5, 6, 54, 67, 69, 69, 76, 89, 100, 114, 754, 2000, 2456]
+console.log(expArray.sort());
+
+// for reversing 
+console.log(expArray.sort().reverse()); //[ 2456, 2000, 754, 114, 100, 89, 76, 69, 69, 67, 54, 6, 5, 3 ]
+
+
+//2. or you can add a new method which handles numeric sorts 
+
+// randomNums = randomNums.sort(function (a, b) { return a - b; });
+// console.log(randomNums); //[ 3, 5, 6, 54, 67, 69, 69, 76, 89, 100, 114, 754, 2000, 2456]
+
+// //for reversing 
+// randomNums = randomNums.sort((a, b) => b - a);
+// console.log(randomNums);  //[ 2456, 2000, 754, 114, 100, 89, 76, 69, 69, 67, 54, 6, 5, 3 ]
+
+// Arrays of Arrays 
+// Array can store different data types including an array itself. Let us create an array of arrays
+const arrayCanStoreArrays = [['first child'], ['second child']];
+
+console.log(arrayCanStoreArrays); //Array [ (1) […], (1) […] ]    0: Array [ "first child" 1: Array [ "second child" ]
+
