@@ -1,0 +1,4 @@
+Make a PR in 30daysofjs repo in day06 in for of loop section 
+fix the typo :
+
+it is very hand'y' way to iterate through an array if we are not interested in the index of each element in the array.
