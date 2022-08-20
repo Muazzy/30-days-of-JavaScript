@@ -74,31 +74,31 @@
 //   // 0 1 2 4 5
 
 
-const countries = [
-    'Albania',
-    'Bolivia',
-    'Canada',
-    'Denmark',
-    'Ethiopia',
-    'Finland',
-    'Germany',
-    'Hungary',
-    'Ireland',
-    'Japan',
-    'Kenya'
-]
+// const countries = [
+//     'Albania',
+//     'Bolivia',
+//     'Canada',
+//     'Denmark',
+//     'Ethiopia',
+//     'Finland',
+//     'Germany',
+//     'Hungary',
+//     'Ireland',
+//     'Japan',
+//     'Kenya'
+// ]
 
-const webTechs = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Redux',
-    'Node',
-    'MongoDB'
-]
+// const webTechs = [
+//     'HTML',
+//     'CSS',
+//     'JavaScript',
+//     'React',
+//     'Redux',
+//     'Node',
+//     'MongoDB'
+// ]
 
-const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+// const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 
 // Iterate 0 to 10 using for loop, do the same using while and do while loop
 
@@ -107,55 +107,55 @@ const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 // Iterate 0 to n using for loop
 
 
-for (let i = 0; i <= 10; i++) {
-    console.log('for loop ' + i);
-}
+// for (let i = 0; i <= 10; i++) {
+//     console.log('for loop ' + i);
+// }
 
-let i = 0;
-while (i <= 10) {
-    console.log('while loop ' + i);
-    i++;
-}
+// let i = 0;
+// while (i <= 10) {
+//     console.log('while loop ' + i);
+//     i++;
+// }
 
-let x = 0;
-do {
-    console.log('do while loop ' + x)
-    x++
-} while (x <= 10);
+// let x = 0;
+// do {
+//     console.log('do while loop ' + x)
+//     x++
+// } while (x <= 10);
 
 
 // You can use only expressions inside of a conditional (ternary) operator ?:. A for statement is not an expression. //THAT IS WHY THIS IS NOT WORKING
-function itterateTillN(n, isIncrement) {
-    if (n === 0) {
-        console.log('loop aint applicable')
-    }
-    else if (isIncrement) {
-        for (let i = 0; i <= n; i++) {
-            console.log(i)
-        }
-    }
-    else {
-        for (let j = n; j >= 0; j--) {
-            console.log(j)
-        }
-    }
-}
+// function itterateTillN(n, isIncrement) {
+//     if (n === 0) {
+//         console.log('loop aint applicable')
+//     }
+//     else if (isIncrement) {
+//         for (let i = 0; i <= n; i++) {
+//             console.log(i)
+//         }
+//     }
+//     else {
+//         for (let j = n; j >= 0; j--) {
+//             console.log(j)
+//         }
+//     }
+// }
 
-itterateTillN(1, false);
+// itterateTillN(1, false);
 
-let hash = '#';
+// let hash = '#';
 
-for (let i = 1; i <= 7; i++) {
-    console.log(hash.repeat(i));
-}
+// for (let i = 1; i <= 7; i++) {
+//     console.log(hash.repeat(i));
+// }
 
-for (let a = 0; a <= 10; a++) {
-    console.log(`${a} x ${a} = ${a * a}`)
-}
+// for (let a = 0; a <= 10; a++) {
+//     console.log(`${a} x ${a} = ${a * a}`)
+// }
 
-for (let a = 0; a <= 10; a++) {
-    console.log(`${a}  ${a ** 2}  ${a ** 3}`)
-}
+// for (let a = 0; a <= 10; a++) {
+//     console.log(`${a}  ${a ** 2}  ${a ** 3}`)
+// }
 
 //printing even numbers
 // for (let e = 0; e <= 100; e++) {
@@ -171,7 +171,10 @@ for (let a = 0; a <= 10; a++) {
 //     }
 // }
 
-// for (let p = 2; p <= 100; p++) {
+// for (let p = 0; p <= 100; p++) {
+//     if (p < 2) {
+//         continue
+//     }
 
 //     let Isdivisible = false; //to check if the number 'p' is divisible by anyother number other than it self
 
@@ -211,6 +214,45 @@ for (let a = 0; a <= 10; a++) {
 
 // console.log([evenSum, oddSum])
 
-let random = Math.floor(Math.random());
+
+
+
 // random = Math.floor(random);
 // console.log(random * 10)
+
+
+// Develop a small script which generate array of 5 random numbers
+// let arr = []
+// for (let i = 0; i <= 5; i++) {
+
+//     let randomNumGenerator = Math.random();
+
+//     let rand = Math.floor((randomNumGenerator * 100)) + 1; //+1 so its not 0 & so its from 1-n  (n=10)
+//     arr.push(rand)
+
+// }
+// console.log(arr)
+
+
+// Develop a small script which generate array of 5 random numbers and the numbers must be unique
+
+let arr = [];
+for (let i = 0; i < 5; i++) {
+
+    let randomNumGenerator = Math.random();
+    let rand = Math.floor(randomNumGenerator * 100) + 1; //+1 so its not 0 & so its from 1-n  (n=10)
+    let isUnique = false;
+
+
+    do {
+        if (arr.indexOf(rand) === -1) {
+            arr.push(rand)
+            isUnique = true;
+            break
+        }
+        rand = Math.floor(Math.random() * 100) + 1;
+    }
+    while (!isUnique)
+}
+console.log(arr)
+
