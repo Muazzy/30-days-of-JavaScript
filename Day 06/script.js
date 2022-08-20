@@ -256,3 +256,65 @@ for (let i = 0; i < 5; i++) {
 }
 console.log(arr)
 
+let a = 97;
+let z = 122;
+
+let A = 65;
+let Z = 90;
+
+let smallABC = []
+let bigABC = []
+let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+for (let i = a; i <= z; i++) {
+
+    let alphabet = String.fromCharCode(i);
+    smallABC.push(alphabet);
+
+
+}
+
+for (let i = A; i <= Z; i++) {
+
+    let alphabet = String.fromCharCode(i);
+    bigABC.push(alphabet);
+
+
+}
+
+
+function randomIDGenerator(n) {
+    let randomId = '';
+    let characters = smallABC.concat(bigABC);
+    characters = characters.concat(nums).toString();
+    characters = characters.replaceAll(',', ''); //removing commas
+    console.log(characters);
+    for (let i = 0; i < n; i++) {
+        let randomIndex = Math.floor(Math.random() * characters.length);
+        randomId += characters.charAt(randomIndex);
+    }
+
+    return randomId;
+}
+
+console.log(randomIDGenerator(3))
+
+let turnitinSentence = [];
+
+for (let i = 0; i < 30; i++) {
+    // let randomNoOfCharacters = Math.floor(Math.random() * 10) + 1;
+    turnitinSentence.push(randomIDGenerator(6));
+}
+
+console.log(turnitinSentence);
+
+
+// This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+
+let fruits = ['banana', 'orange', 'mango', 'lemon']
+let fruitsReversed = []
+
+for (let i = fruits.length - 1; i >= 0; i--) {
+    fruitsReversed.push(fruits[i])
+}
+console.log(`${fruits} are reversed now ${fruitsReversed}`)
