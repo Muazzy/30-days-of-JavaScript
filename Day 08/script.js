@@ -179,9 +179,156 @@ console.log(car) //Object { model_name: "Mehran Vxr", company: "Suzuki", top_spe
 
 car['movingInTopSpeed'] //no output
 
+car['movingInTopSpeed']() //moving with the speed of 69
+
 console.log(car['top_speed']) //69
 console.log(car['company']) //Suzuki
 console.log(car['model_name']) //Mehran vxr
 console.log(car['isHybrid']) //false
 car['moveForward'] //no output
 console.log(car['moveForward']) //function moveForward()
+// if you want to run the function 
+car['moveForward']() //moving forward
+
+// the function inside any object is called method (object method)
+
+//This keyword
+// this keyword refers to the object itself, we can use this to access the values of different properties of the object
+
+// Reason behind why we cant use this keyword inside a arrow function object methods
+// We can not use an arrow function as object method because the word this refers to the window inside an arrow function instead of the object itself.
+
+// Setting new key for an object
+// An object is a mutable data structure and we can modify the content of an object after it gets created.
+
+const person = {
+    firstName: 'Asabeneh',
+    lastName: 'Yetayeh',
+    age: 250,
+    country: 'Finland',
+    city: 'Helsinki',
+    skills: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'React',
+        'Node',
+        'MongoDB',
+        'Python',
+        'D3.js'
+    ],
+    getFullName: function () {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+
+person.firstName = 'Muazzam'
+person.lastName = 'Soomro'
+person.age = 22
+person.country = 'Pakistan'
+person.city = 'Sakrand'
+//adding new property
+person.title = 'Software Engineer'
+
+//removing the skills which im not experienced in
+person.skills.pop('D3.js')
+person.skills.pop('Python')
+person.skills.pop('Node')
+person.skills.pop('React')
+person.skills.pop('MongoDB')
+
+//adding in more skills
+person.skills.push('Flutter')
+person.skills.push('Dart')
+person.skills.push('Git')
+person.skills.push('SQL')
+
+//defining a new function for the person object
+person.getPersonInfo = function () {
+    let skillsWithoutLastSkill = this.skills.splice(0, this.skills.length - 1).join(', ')
+
+    let lastSkill = this.skills.splice(this.skills.length - 1)[0]
+    let skills = `${skillsWithoutLastSkill}, and ${lastSkill}`
+    let fullName = `${this.firstName} ${this.lastName}`
+
+    let statement = `${fullName} is a ${this.title}.\nHe lives in ${this.city},${this.country}.\nHe is experienced in ${skills}.`
+
+    return statement;
+}
+
+console.log(person) //Object { firstName: "Muazzam", lastName: "Soomro", age: 22, country: "Pakistan", city: "Sakrand", skills: (7) […], getFullName: getFullName(), title: "Software Engineer", getPersonInfo: getPersonInfo()
+
+console.log(person.getPersonInfo())
+// Muazzam Soomro is a Software Engineer.
+// He lives in Sakrand,Pakistan.
+// He is experienced in HTML, CSS, JavaScript, Flutter, Dart, Git, and SQL.
+
+
+
+
+
+// Object Methods
+
+// There are different methods to manipulate an object. Let us see some of the available methods.
+
+// Object.assign: to copy an object without modifying the original object
+
+// example: 
+
+const personClone = Object.assign({}, person)
+console.log(personClone) //same outputs
+console.log(personClone.getPersonInfo()) //same outputs
+
+// Getting object keys using Object.keys()
+// Object.keys: To get the keys or properties of an object as an array
+
+console.log(Object.keys(person)) //Array(9) [ "firstName", "lastName", "age", "country", "city", "skills", "getFullName", "title", "getPersonInfo" ]
+
+//Object.keys() will only return the properties name, not the values
+
+console.log(Object.keys(person.skills)) // Array [] //will only work on a object 
+
+// Getting object values using Object.values()
+// Object.values:To get values of an object as an array
+
+console.log(Object.values(person)) //[ "Muazzam", "Soomro", 22, "Pakistan", "Sakrand", [], getFullName(), "Software Engineer", getPersonInfo() ]
+
+// Getting both object keys and values usig Object.entries()
+// Object.entries:To get the keys and values in an array
+
+console.log(Object.entries(person)) //Array(9) [ (2) […], (2) […], (2) […], (2) […], (2) […], (2) […], (2) […], (2) […], (2) […] ]
+
+// output:
+// 0: Array [ "firstName", "Muazzam" ]
+// ​
+// 1: Array [ "lastName", "Soomro" ]
+// ​
+// 2: Array [ "age", 22 ]
+// ​
+// 3: Array [ "country", "Pakistan" ]
+// ​
+// 4: Array [ "city", "Sakrand" ]
+// ​
+// 5: Array [ "skills", [] ]
+// ​
+// 6: Array [ "getFullName", getFullName()
+//  ]
+// ​
+// 7: Array [ "title", "Software Engineer" ]
+// ​
+// 8: Array [ "getPersonInfo", getPersonInfo() ]
+
+
+// Checking properties using hasOwnProperty()
+// hasOwnProperty: To check if a specific key or property exist in an object
+//it will return a boolean value 
+
+console.log(person.hasOwnProperty('skills')) //true
+console.log(person.hasOwnProperty('gender')) //false
+console.log(person.hasOwnProperty('fullName')) //false
+console.log(person.hasOwnProperty('firstName')) //true
+console.log(person.hasOwnProperty('getPersonInfo')) //true
+
+
+
