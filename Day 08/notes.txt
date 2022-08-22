@@ -1,0 +1,16 @@
+Scope: 
+Scope is the area of the program where an item (be it variable, constant, function, etc.) that has an identifier name is recognized.
+
+A variable can be declared at different scope. In this section, we will see the scope variables, scope of variables when we use var or let. 
+
+variables can be
+-Global 
+-Local
+
+variable can be declared gloabally or locally scope.
+
+Note: Anything declared without let, var or const keyword is scoped at global level
+
+//Global Scope
+
+A globally declared variable can be accessed every where in the same file. But the term global is relative. It can be global to the file or it can be global relative to some block of codes.
