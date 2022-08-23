@@ -142,16 +142,60 @@ function rateProducts(prodId, userId, rate) {
         if (prodId === prod._id) {
             found = true
             prod.ratings.push({ userId: userId, rate: rate })
+            return
         }
     }
 
     if (!found) {
-        console.log('product not found')
+        return 'product not found'
     }
 }
 
 console.log(products)
-// rateProducts('hedfcg', 'uid69', 5)
+rateProducts('hedfcg', 'uid69', 5)
 
 console.log(products)
 
+// b. Create a function called averageRating which calculate the average rating of a product
+function averageRating(product) {
+    let avgRating = 0
+    let ratings = product.ratings;
+    for (rating of ratings) {
+        avgRating += rating.rate
+    }
+    return avgRating / ratings.length
+}
+
+dummyProduct = {
+    _id: 'eedfcf',
+    name: 'mobile phone',
+    description: 'Huawei Honor',
+    price: 200,
+    ratings: [
+        { userId: 'fg12cy', rate: 5 },
+        { userId: 'zwf8md', rate: 4.5 }
+    ],
+    likes: []
+};
+
+console.log(averageRating(dummyProduct))
+
+// Create a function called likeProduct. This function will helps to like to the product if it is not liked and remove like if it was liked.
+
+function likeProduct(product, user) {
+    let uId = user._id;
+    let likes = product.likes;
+
+    if (likes.includes(uId)) {
+        product.likes.splice(likes.indexOf(uId), 1)
+    }
+    else {
+        product.likes.push(uId)
+    }
+    return product;
+}
+
+
+
+console.log(likeProduct(dummyProduct, usr2))
+console.log(likeProduct(dummyProduct, usr2))
