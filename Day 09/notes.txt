@@ -1,0 +1,5 @@
+Higher order function
+
+higher order functions are simply functions which either take other function as a parameter or return a function as a value.
+
+Note: The function passed as a parameter is called callback.
