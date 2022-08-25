@@ -17,3 +17,19 @@ Note: The function passed as a parameter is called callback.
 
 //Setting Interval using a setInterval function
 // In JavaScript, we use setInterval higher order function to do some activity continuously with in some interval of time. The setInterval global method take a callback function and a duration as a parameter. The duration is in milliseconds and the callback will be always called in that interval of time.
+
+
+********************************************************************************
+
+Functional Programming
+Instead of writing regular loop, latest version of JavaScript introduced lots of built in methods which can help us to solve complicated problems.
+
+Builtin methods which take callback function 
+-forEach
+-map
+-filter
+-reduce
+-find
+-every
+-some
+-sort
