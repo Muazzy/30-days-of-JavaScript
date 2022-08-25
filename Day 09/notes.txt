@@ -33,3 +33,28 @@ Builtin methods which take callback function
 -every
 -some
 -sort
+
+PR:
+
+In some section DAY 09 Higher order function
+
+some
+some: Check if some of the elements are similar in one aspect. It returns boolean
+
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const bools = [true, true, true, true]
+
+const areSomeTrue = bools.some((b) =>  b === true)
+
+console.log(areSomeTrue) //true
+
+
+change it to :
+
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+//added false keyword.
+const bools = [true, true, false, true]
+
+const areSomeTrue = bools.some((b) =>  b === true)
+
+console.log(areSomeTrue) //true
