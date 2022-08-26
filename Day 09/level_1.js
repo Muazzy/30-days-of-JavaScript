@@ -93,3 +93,66 @@ function getStringLists(arr) {
 let randArray = [1, true, false, 'S', 'muazzam', 69, 'stRIng']
 console.log(getStringLists(randArray)) //Array(3) [ "S", "muazzam", "stRIng" ]
 
+const sumOfNumbers = numbers.reduce((accumulator, current) => {
+    return 0, accumulator + current //specify the accumulator initial value in the start when using normal function decleration
+})
+
+const sumOfNumbersExplicit = numbers.reduce((accumulator, current) =>
+    accumulator + current, 0  //specify the accumulator inital value in the end when using a expilicit arrow function
+
+)
+console.log(sumOfNumbers) //55
+console.log(sumOfNumbersExplicit) //55
+
+
+// Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+
+// idk why this is giving weird results, will solve this
+const concatenate = countries.reduce((acc, current) => {
+    //initial value of acc is empty string ''
+    return acc + ', ' + current
+
+}
+)
+
+//It is giving these weird result and adding the sentence to each element cuz reduce function itterates the whole array and in each itteration it is giving the result + sentence which is equal to the current element + sentnce that's why it is giving result like this :  Finland, Sweden are north European countries, Denmark are north European 
+
+// console.log(concatenate) //Finland, Sweden are north European countries, Denmark are north European countries, Norway are north European countries, IceLand are north European countries
+
+function getConcatenatedSentence(sentence, countries) {
+    return `${countries} ${sentence}`
+}
+
+
+console.log(getConcatenatedSentence('are north European countries', concatenate))
+
+// Explain the difference between some and every
+//some and every both return a boolean
+//some is like || (OR) operator which returns true if at least one of the arr element satisfies the conditoin
+//while every is && (AND) operator which returns true only and only when all of the arr elements satisfies the condition you passed in
+
+const doesEveryCountryContainsLand = countries.every((element) => element.includes('land'))
+console.log(doesEveryCountryContainsLand) //false
+
+//Explain the difference between find and findIndex.
+//find returns the element if found in the array
+//findIndex returns the index or position of the element in the array that you were searching for, it the element is not found in the array it will return -1.
+
+// Use find to find the first country containing only six letters in the countries array
+
+const firstCountry = countries.find((element) => element.length === 6)
+console.log(firstCountry) //Sweden
+
+// Use findIndex to find the position of the first country containing only six letters in the countries array
+const indexOfFirstCountry = countries.findIndex((element) => { return element.length === 6 })
+console.log(indexOfFirstCountry) //1
+
+
+// Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+const posOfNorway = countries.findIndex((element) => element === 'Norway')
+console.log(posOfNorway) //3
+
+
+// Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+const posOfRussia = countries.findIndex((element) => { return element === 'Russia' })
+console.log(posOfRussia)
