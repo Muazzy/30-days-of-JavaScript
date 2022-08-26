@@ -301,3 +301,118 @@ console.log(areTheseAllStrings) //true
 const bools = [true, true, true, true]
 const areSomeTrue = bools.some((b) => b === true)
 console.log(areSomeTrue) //true
+
+
+
+///****************************************************************///
+
+// Sort
+// sort: The sort methods arranges the array elements either ascending or descending order. By default, the sort() method sorts values as strings.This works well for string array items but not for numbers. If number values are sorted as strings, it give us wrong result.
+
+// Note: Sort method modify the original array, so It is recommended to copy the original data before you start using sort method.
+
+
+// Sorting string values
+const products = ['banana', 'milk', 'dates', 'honey', 'zeera biscuit', 'cookies', 'chocolate', 'beef', 'burger', 'handi', 'apples', 'water']
+
+//before sorting
+// console.log(products) //[ "banana", "milk", "dates", "honey", "zeera biscuit", "cookies", "chocolate", "beef", "burger", "handi", … ]
+
+// console.log(products.sort()) //[ "apples", "banana", "beef", "burger", "chocolate", "cookies", "dates", "handi", "honey", "milk", … ]
+
+//Now the original products array  is also sorted
+// console.log(products) //[ "apples", "banana", "beef", "burger", "chocolate", "cookies", "dates", "handi", "honey", "milk", … ]
+
+
+// Sorting Numeric values
+// As you can see in the example below, 100 came first after sorted in ascending order. Sort converts items to string , since '100' and other numbers compared, 1 which is in the beginning of the string '100' became the smallest. To avoid this, we use a compare call back function inside the sort method, which return a negative, zero or positive.
+
+const numbers3 = [9.81, 3.14, 100, 37]
+// Using sort method to sort number items provide a wrong result. see below
+console.log(numbers3.sort()) //sorted by their ASCII character order (only first character of each element is compared) //[100, 3.14, 37, 9.81]
+
+//The right way to sort numeric values using sort
+
+numbers3.sort(
+
+    //compare function
+    function (a, b) {
+        // subtracting the second item from the first.
+        return a - b //ascending
+    }
+)
+
+console.log(numbers3) // [3.14, 9.81, 37, 100]
+
+numbers3.sort(
+    //compare function
+    // subtracting the first item from the second.
+
+    (x, y) => y - x //descending
+)
+
+console.log(numbers3) //[ 100, 37, 9.81, 3.14 ]
+
+
+//we can also use the comparision operator in the compare callback function, However, It is NOT recommanded
+numbers3.sort(
+    //compare function
+    (x, y) => y > x //descending
+)
+
+console.log(numbers3) //[ 100, 37, 9.81, 3.14 ]
+
+
+//Sorting Object Arrays
+// Whenever we sort objects in an array, we use the object key to compare. Let us see the example below.
+
+/////////////syntax\\\\\\\\\\\\\\\
+// objArr.sort(function (a, b) {
+//     if (a.key < b.key) return -1
+//     if (a.key > b.key) return 1
+//     return 0
+//   })
+
+//   // or
+
+//   objArr.sort(function (a, b) {
+//     if (a['key'] < b['key']) return -1
+//     if (a['key'] > b['key']) return 1
+//     return 0
+//   })
+
+const users = [
+    { name: 'Muazzam', age: 22 },
+    { name: 'Brook', age: 17 },
+    { name: 'Ali', age: 18 },
+    { name: 'Ammad', age: 17 },
+    { name: 'Faizal', age: 15 },
+    { name: 'Neel', age: 20 },
+]
+// console.log(users)
+//sorting by age (descending)
+// users.sort((x, y) => {
+//     if (x.age < y.age) return 1 //(frst item less than second one)
+//     if (x.age > y.age) return -1 //(frst item greater than second one)
+//     return 0 //if equal
+// })
+
+// console.log(users)
+
+//sorting by age (ascending)
+// users.sort((x, y) => {
+//     if (x.age < y.age) return -1 //(frst item less than second one)
+//     if (x.age > y.age) return 1  //(frst item greater than second one)
+//     return 0 //if equal
+// })
+
+
+users.sort((name1, name2) => {
+    return name1.name > name2.name  //A - Z (ascending)
+})
+console.log(users)
+
+users.sort((name1, name2) => {
+    return name1.name < name2.name  //Z - A (descending)
+})
+console.log(users) 

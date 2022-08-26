@@ -33,6 +33,10 @@ Builtin methods which take callback function
 -every
 -some
 -sort
+    -sorting string values
+    -sorting Numeric values
+    -sorting object arrays
+    
 
 PR:
 
