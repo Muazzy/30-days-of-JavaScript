@@ -1,0 +1,4 @@
+//Sets
+Set is a collection of elements i.e simillar to sets in mathematics
+Set can only contains unique elements.
+
