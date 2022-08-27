@@ -54,3 +54,100 @@ function categorizeCountries(pattern) {
 }
 
 console.log(categorizeCountries('stan'))
+
+// 4. Create a function which return an array of objects, which is the letter and the number of times the letter use to start with a name of a country.
+
+function firstLetter(arr, letter) {
+
+    const filteredArr = arr.filter(
+        (element) => {
+            return element.name.startsWith(letter)
+        }
+    )
+    return { filteredArr, noOfTimesUsed: filteredArr.length }
+
+}
+
+console.log(firstLetter(countries, 'U'))
+
+// 5. Declare a getFirstTenCountries function and return an array of ten countries.Use different functional programming to work on the countries.js array
+
+//desi approach xD
+
+// function getFirstTenCountries(arr) {
+//     let firstTenCountries = []
+//     for (let x = 0; x < 10; x++) {
+//         firstTenCountries.push(arr[x])
+//     }
+//     return firstTenCountries
+// }
+// console.log(getFirstTenCountries(countries))
+
+// function getLastTenCountries(arr) {
+//     let lastTenCountries = []
+//     for (let x = arr.length - 1; x >= arr.length - 10; x--) {
+//         lastTenCountries.push(arr[x])
+//     }
+//     return lastTenCountries.reverse()
+// }
+// console.log(getLastTenCountries(countries))
+
+// same approach with filter
+
+function getFirstTenCountries(arr) {
+    return arr.filter((element, index) => {
+        return index >= 0 && index < 10
+    })
+}
+
+console.log(getFirstTenCountries(countries))
+
+
+
+function getLastTenCountries(arr) {
+    return arr.filter((element, index, arr) => {
+        return index >= arr.length - 10 && index <= arr.length - 1
+    })
+}
+console.log(getLastTenCountries(countries))
+
+
+
+// 7. Find out which letter is used many times as initial for a country name from the countries array (eg. Finland, Fiji, France etc)
+function mostUsedInitial(arr) {
+    let mostUsed = ''
+    let noOfTimesUsed = 0
+    let alphabets = generateBigAbc()
+
+    alphabets.forEach(
+
+        (char) => {
+            let currentCountriesWithXChar = []
+            currentCountriesWithXChar = arr.filter((country) => {
+                return country.name.startsWith(char)
+            })
+
+            if (noOfTimesUsed < currentCountriesWithXChar.length) {
+                noOfTimesUsed = currentCountriesWithXChar.length
+                mostUsed = char
+
+                console.log(noOfTimesUsed)
+                console.log(mostUsed)
+            }
+        }
+    )
+
+    return `Most used initial is ${mostUsed} which is used for ${noOfTimesUsed}`
+}
+
+console.log(mostUsedInitial(countries)) //Most used initial is S which is used for 33
+
+
+function generateBigAbc() {
+    let arr = []
+    for (x = 65; x <= 90; x++) {
+        arr.push(String.fromCharCode(x))
+    }
+
+    return arr
+}
