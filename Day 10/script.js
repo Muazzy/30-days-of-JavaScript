@@ -111,5 +111,37 @@ console.log(setOfUniqueRandNums) //Set(10) [ 0, 2, 3, 5, 1, 4, 6, 7, 69, 101 ]
 console.log(setOfUniqueRandNums.size) //10
 
 
-//Start From Union of Sets
+//You can use Sets to find similar items in two array: i.e union of sets
+// Union of sets
+// finding a union of two sets can be achieved using spread operator. Lets find the union of set A and set B (A U B)
+
+let a = [1, 2, 3, 4, 5]
+let b = [3, 4, 5, 6]
+let c = [...a, ...b] //union of two sets //spread operator to pull the whole array 
+
+let A = new Set(a) //conveting a (array) to set , so it should only contain unique items
+let B = new Set(b) //conveting b (array) to set , so it should only contain unique items
+//result: Union of AB i.e AUB
+
+let AUB = new Set(c) //only unique items will be returned
+console.log(AUB) //Set(6) [ 1, 2, 3, 4, 5, 6 ]
+
+//you can use sets to find similar elements of an array that are also present in the other array
+// Intersection of sets 
+// To find an intersection of two sets can be achieved using filter. Lets find the intersection of set A and set B (A ∩ B)
+
+let A_intersection_B = a.filter((number) => B.has(number))  //filter the numbers that are not present in the B
+let A_intersection_B_set = new Set(A_intersection_B)
+console.log(A_intersection_B_set) //Set(3) [ 3, 4, 5 ]
+
+//*************************************************//
+//you can use sets to find different elements of an array that are not present in the other array
+// Intersection of sets 
+// Difference of Sets
+// To find an the difference between two sets can be achieved using filter.Lets find the different of set A and set B(A \ B)
+
+let A_diff_B = a.filter((number) => !B.has(number))
+let A_diff_B_set = new Set(A_diff_B)
+console.log(A_diff_B_set) //Set [ 1, 2 ]
+
 
