@@ -354,4 +354,4 @@ const addAllnums = (...nums) => {
     return totalSum
 }
 
-console.log(addAllnums(1, 2, '67', 3, 4, true))
+console.log(addAllnums(1, 2, '67', 3, 4, true)) //10
