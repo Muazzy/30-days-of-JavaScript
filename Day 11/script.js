@@ -265,3 +265,93 @@ Prepare JS Test 4/1/2020 8:30 true script
 Give JS Test 4/1/2020 10:00 false script
 Assess Test Result 4/1/2020 1:00 false
 */
+
+
+
+
+
+
+
+
+/******************************************************************************/
+// Spread or Rest Operator
+// When we destructure an array we use the spread operator(...) to get the rest elements as array.In addition to that we use spread operator to spread array elements to another array.
+
+// using spread operator to get the rest of the elements
+// eg:
+const arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+let [num1, num2, num3, ...rest] = arr2
+
+console.log(num1, num2, num3) // 1 2 3
+console.log(rest)  //Array(7) [ 4, 5, 6, 7, 8, 9, 0 ]
+
+//using spread operatorr to copy an array
+
+const odds = [1, 3, 5, 7, 9]
+console.log(odds) //Array(5) [ 1, 3, 5, 7, 9 ]
+const oddNums = [...odds]
+console.log(oddNums) //Array(5) [ 1, 3, 5, 7, 9 ]
+
+//another example (adding or combining two arrays into one)
+
+const frontEnd = ['HTML', 'CSS', 'JS', 'React']
+const backEnd = ['Node', 'Express', 'MongoDB']
+const fullStack = [...frontEnd, ...backEnd]
+
+console.log(fullStack) //Array(7) [ "HTML", "CSS", "JS", "React", "Node", "Express", "MongoDB" ]
+
+
+//using spread operator to copy an object
+const ogUser = {
+    name: 'Muazzam',
+    cast: 'Soomro',
+    country: 'Pakistan',
+    id: 69
+}
+
+const copyOfUser = { ...ogUser }
+console.log(copyOfUser) //Object { name: "Muazzam", cast: "Soomro", country: "Pakistan", id: 69 }
+
+//MODIFYING OR CHANGING the object while copying
+
+const copyOfUser2 = { ...ogUser, name: 'Muazzy' }
+console.log(copyOfUser2) //Object { name: "Muazzy", cast: "Soomro", country: "Pakistan", id: 69 }
+
+
+//Using spread operator with arrow function
+
+// Whenever we like to write an arrow function which takes unlimited number of arguments we use a spread operator. 
+// note: If we use a spread operator as a parameter, the argument passed when we invoke a function will change to an array.
+
+const printAllElements = (...args) => console.log(args)
+
+printAllElements(1, 2, 3, 43, 5, 6, 7, 'fs', true) //Array(9) [ 1, 2, 3, 43, 5, 6, 7, "fs", true ]
+
+
+// finding sum of all nums
+const sumOfAllNums = (...nums) => {
+    let totalSum = 0
+    nums.forEach(element => {
+        if (typeof element === 'number') {
+            totalSum += element
+        }
+    });
+    return totalSum
+}
+
+console.log(sumOfAllNums(1, 2, '67', 3, 4)) //10
+
+// using for of loop
+const addAllnums = (...nums) => {
+    let totalSum = 0
+    for (const num of nums) {
+        if (typeof num === 'number') {
+            totalSum += num
+        }
+    }
+
+    return totalSum
+}
+
+console.log(addAllnums(1, 2, '67', 3, 4, true))
