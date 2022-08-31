@@ -81,7 +81,7 @@ let { name, age, skills } = newStudent
 console.log(name, age, skills)
 
 
-// let { frontEnd, backEnd, dataBase, dataScience } = skills
+let { frontEnd, backEnd, dataBase, dataScience } = skills
 frontEnd.push({ skill: 'Bootstrap', level: 8 })
 backEnd.push({ skill: 'Express', level: 9 })
 dataBase.push({ skill: 'SQL', level: 8 })
