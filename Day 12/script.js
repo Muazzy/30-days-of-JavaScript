@@ -155,3 +155,6 @@ console.log(matches) //I am teacher and  I love teaching.There is nothing as mor
 
 // To learn more and to create different RegExp patterns for different use cases:
 //  https://regex101.com/
+
+
+//The main goal of using RegExp is to extract and clearn any kind of text to make some meaning out of it
