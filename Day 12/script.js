@@ -33,3 +33,15 @@ console.log(pattern1.test(str2)); //false, cuz the we did'nt add a case insensit
 
 //Array containing all of the match
 // 2. match(): Returns an array containing all of the matches, including capturing groups, or null if no match is found. If we do not use a global flag, match() returns an array containing the pattern, index, input and group.
+
+// example: 
+const str3 = 'i am full of cash and full of water'
+const withoutG = /full/
+console.log(str3.match(withoutG))
+// without g flag it returned pattern, groups which is unidentified, index and input
+// output
+// 0: "full"
+// groups: undefined
+// index: 5
+// input: "i am full of cash and full of water"
+// length: 1
