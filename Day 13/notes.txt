@@ -1,0 +1,20 @@
+Difference bw console.log() & document.write
+
+We use console object methods to show output on the browser console and we use document.write to show output on the browser document(view port).
+
+However, Both methods are used only for testing and debugging purposes.
+The console method is the most popular testing and debugging tool on the browser.
+
+In addition to the famous, console.log() method, the console provides other more methods.
+
+console obj methods:
+    console.log()
+    console.warn()
+    console.error()
+    console.table()
+    console.time()
+    console.info()
+    console.assert()
+    console.group()
+    console.count()
+    console.clear()
