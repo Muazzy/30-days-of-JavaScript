@@ -53,4 +53,4 @@ console.time('for each')
 countries.forEach(country => {
     console.log(country)
 });
-console.timeEnd('for each') //for each: 42ms - timer ended
+console.timeEnd('for each') //for each: 42ms - timer endedd
