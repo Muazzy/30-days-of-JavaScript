@@ -1,0 +1,11 @@
+try,
+catch, 
+finally
+
+// to throw exceptions
+throw
+
+Error Types:
+-RefrenceError
+-TypeError
+-SyntaxError
