@@ -95,3 +95,114 @@ myResult2.printPercentage() //56.9%
 //         console.log(`${percentage.toFixed(1)}%`)
 //     }
 // }
+
+
+// Properties with initial value
+// When we create a class for some properties we may have an initial value. For instance if you are playing a game, you starting score will be zero. 
+// So, we may have a starting score or score which is zero.In other way, we may have an initial skill and we will acquire some skill after some time.
+
+
+class Person {
+    constructor(firstName, lastName, age, country, city) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.age = age
+        this.country = country
+        this.city = city
+        this.score = 0
+        this.skills = []
+    }
+    getFullName() {
+        const fullName = this.firstName + ' ' + this.lastName
+        return fullName
+    }
+}
+
+const person1 = new Person('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
+const person2 = new Person('Lidiya', 'Tekle', 28, 'Finland', 'Espoo')
+
+console.log(person1.score) //0
+console.log(person2.score) //0
+
+console.log(person1.skills) //[]
+console.log(person2.skills) //[]
+
+
+// A class's method could be a regular method or getter or setter
+
+// getter
+// The get method allow us to access value from the object.
+//  We write a get method using keyword get followed by a function. 
+//  Instead of accessing properties directly from the object we use getter to get the value.
+//we use it to so that our private variables are not modified and it also maintains a level of abstraction.
+
+
+class Person2 {
+    constructor(firstName, lastName, age, country, city) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.age = age
+        this.country = country
+        this.city = city
+        this.score = 100
+        this.skills = ['reading']
+    }
+    getFullName() {
+        const fullName = this.firstName + ' ' + this.lastName
+        return fullName
+    }
+    get getScore() {
+        return this.score
+    }
+    get getSkills() {
+        return this.skills
+    }
+}
+
+const person3 = new Person2('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
+const person4 = new Person2('Lidiya', 'Tekle', 28, 'Finland', 'Espoo')
+
+// console.log(person3.getScore) // We do not need parenthesis to call a getter method
+// console.log(person4.getScore) //100
+
+// console.log(person3.getSkills) // [reading]
+// console.log(person4.getSkills) // [reading]
+
+
+// setter
+// The setter method allow us to modify the value of certain properties. We write a setter method using keyword set followed by a function. See the example bellow.
+
+
+class SomeClass {
+    constructor(name, cast) {
+        this.name = name
+        this.cast = cast
+        this.score = 0
+        this.skills = []
+    }
+
+    set addSkill(newSkill) {
+        this.skills.push(newSkill)
+    }
+
+    set setScore(score) {
+        this.score += score
+    }
+
+    get getScore() {
+        return this.score
+    }
+    get getSkills() {
+        return this.skills
+    }
+}
+
+const obj69 = new SomeClass('myName', 'myCast');
+
+obj69.setScore = 7
+console.log(obj69.getScore) //7
+
+obj69.addSkill = 'reading'
+console.log(obj69.getSkills) //Array ["reading"]
+
+//continue from static method
