@@ -45,5 +45,28 @@ class EmailAuthentication {
     }
 }
 
+//we can create as many objs as we want using the blueprint (i.e class)
+let withoutDefiningParameters = new EmailAuthentication()
+console.log(withoutDefiningParameters) //Object { email: undefined, password: undefined }
+
 let myEmailPass = new EmailAuthentication('test123@gmail.com', '123');
 myEmailPass.showCredentials() //Email: test123@gmail.com, Password: 123
+
+
+// Default values with constructors
+// The constructor function properties may have a default value like other regular functions.
+
+class Result {
+    constructor(obtainedMarks = 0, totalMarks = 100) {
+        this.obtainedMarks = obtainedMarks;
+        this.totalMarks = totalMarks;
+    }
+
+    printPercentage() {
+        let percentage = (this.obtainedMarks / this.totalMarks) * 100
+        console.log(`${percentage.toFixed(1)}%`)
+    }
+}
+
+const myResult = new Result(70);
+myResult.printPercentage()
