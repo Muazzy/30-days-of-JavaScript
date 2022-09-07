@@ -21,5 +21,29 @@ class ClassName {
 
 // Class instantiation
 // instantiation of a class means creating an object from a class
+
 const newObj = new ClassName()
 console.log(newObj) //Object {  }
+
+// Class Constructor
+// The constructor is a builtin function which allows as to create a blueprint for our object.
+// The constructor function starts with a keyword constructor followed by a parenthesis.
+// Inside the parenthesis we pass the properties of the object as parameter.
+
+// Note: We use the this keyword to attach the constructor parameters with the class.
+
+// syntax
+
+class EmailAuthentication {
+    constructor(email, password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    showCredentials() {
+        console.log(`Email: ${this.email}, Password: ${this.password}`)
+    }
+}
+
+let myEmailPass = new EmailAuthentication('test123@gmail.com', '123');
+myEmailPass.showCredentials() //Email: test123@gmail.com, Password: 123
