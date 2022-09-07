@@ -68,5 +68,30 @@ class Result {
     }
 }
 
-const myResult = new Result(70);
-myResult.printPercentage()
+const withDefaultValues = new Result();
+withDefaultValues.printPercentage() //0.0%
+
+const myResult = new Result(70); //with only one parameter i.e obtained marks
+myResult.printPercentage() //70.0%
+
+const myResult2 = new Result(68.32, 120); // with both param
+myResult2.printPercentage() //56.9%
+
+
+
+// class Methods
+// The constructor inside a class is a builtin function which allow us to create a blueprint for the object. 
+// In a class we can create class methods. Methods are JavaScript functions inside the class. Let us create some class methods.
+
+// class Result {
+//     constructor(obtainedMarks = 0, totalMarks = 100) {
+//         this.obtainedMarks = obtainedMarks;
+//         this.totalMarks = totalMarks;
+//     }
+
+//     //method
+//     printPercentage() {
+//         let percentage = (this.obtainedMarks / this.totalMarks) * 100
+//         console.log(`${percentage.toFixed(1)}%`)
+//     }
+// }
